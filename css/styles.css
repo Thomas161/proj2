@@ -12,18 +12,34 @@ html {
   margin: auto;
   background: red;
 }
+#prac {
+  position: relative;
+  font-size: 100px;
+  text-align: center;
+}
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .topHeader {
     width: 100%;
+    height: 80px;
+  }
+  #prac {
+    font-size: 50px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   .topHeader {
     width: 100%;
+    height: 90px;
+  }
+  #prac {
+    font-size: 66px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1164px) {
   .topHeader {
     width: 100%;
+  }
+  #prac {
+    font-size: 100px;
   }
 }
