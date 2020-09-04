@@ -11,18 +11,6 @@ html {
 
   margin: auto;
   background: red;
-  clip-path: polygon(
-    54% 0,
-    84% 0,
-    100% 0,
-    100% 44%,
-    79% 79%,
-    44% 132%,
-    22% 81%,
-    0 50%,
-    0 0,
-    23% 0
-  );
 }
 #prac {
   position: relative;
@@ -33,15 +21,22 @@ html {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-.gridWrapper {
-  display: grid;
-  grid-template-columns: repeat(3fr, auto);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
-  border: 4px solid maroon;
-  background: cornflowerblue;
+
+.gridNavbar {
+  float: left;
+  width: 200px;
+  height: 100%;
 }
-#grid1,
+
+.gridMain {
+  display: grid;
+  grid-template-columns: repeat(2fr, auto);
+  grid-auto-rows: minmax(200px, auto);
+  border: 4px solid maroon;
+  grid-gap: 5px;
+  background: navy;
+}
+
 #grid2,
 #grid3,
 #grid4,
@@ -49,24 +44,29 @@ html {
   position: relative;
 }
 #grid1 {
-  grid-column: 1/1;
-  grid-row: 1;
+  position: relative;
+  width: 200px;
+  height: 100%;
+
+  background-image: url("../teams.jpg");
 }
 #grid2 {
-  grid-column: 2/3;
-  grid-row: 2;
+  grid-column: 1;
+  grid-row: 1;
+  background: white;
 }
 #grid3 {
-  grid-column: 1/2;
-  grid-row: 2;
+  grid-column: 2;
+  grid-row: 1;
 }
 #grid4 {
-  grid-column: 1/2;
+  grid-column: 1;
   grid-row: 2;
+  background: teal;
 }
-#grid4 {
-  grid-column: 1/2;
-  grid-row: 3;
+#grid5 {
+  grid-column: 2;
+  grid-row: 2;
 }
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .topHeader {
