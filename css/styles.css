@@ -30,9 +30,13 @@ html {
 }
 
 .gridNavbar {
-  float: left;
+  position: relative;
   width: 200px;
   height: 100%;
+  float: left;
+
+  background-image: url("../teams.jpg");
+  opacity: 0.75;
 }
 
 .flexWrapContainer {
@@ -40,32 +44,39 @@ html {
   padding: 0;
   margin: 0;
   display: flex;
-  width: 83%;
+  width: 80%;
   height: 100%;
   list-style: none;
+  -ms-box-orient: horizontal;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .flex-item {
   padding: 5px;
   width: 300px;
-  height: 404px;
+  height: 304px;
   margin: 5px;
   line-height: 100px;
   color: white;
   font-weight: bold;
   font-size: 2em;
   text-align: center;
-  flex-wrap: wrap;
-}
-li {
   background: olive;
 }
-
-#grid1 {
+.navbarItems {
   position: relative;
-  width: 200px;
-  height: 100%;
-
-  background-image: url("../teams.jpg");
+  list-style-position: inside;
+  margin: 20px;
+  border-left: solid 2px red;
+  line-height: 100px;
+  background: transparent;
+  list-style-type: none;
+  top: 110px;
+}
+.navbarIcons {
+  color: #fff;
+  font-family: "Racing Sans One", cursive;
+  font-size: 20px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
@@ -73,8 +84,11 @@ li {
     width: 100%;
     height: 80px;
   }
-  #grid1 {
-    width: 110px;
+  .gridNavbar {
+    width: 130px;
+  }
+  .flexWrapContainer {
+    width: 40%;
   }
   #shield {
     width: 90px;
@@ -92,8 +106,11 @@ li {
     width: 100%;
     height: 90px;
   }
-  #grid1 {
-    width: 150px;
+  .flexWrapContainer {
+    width: 60%;
+  }
+  .gridNavbar {
+    width: 170px;
   }
   #shield {
     width: 170px;
