@@ -34,16 +34,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   const navbarSideItems = document.querySelector("#navbarIconsTeam");
   const navbarTeams = document.getElementById("teams");
+  const navbarTeams2 = document.getElementById("team2");
   console.log("Navbar Parent", navbarSideItems);
   console.log("Navbar Child", navbarTeams);
-
+  console.log("Navbar Child", navbarTeams2);
   navbarSideItems.addEventListener("mouseover", (evt) => {
     console.log("Event fired", evt);
-    navbarTeams.style.display = "block";
+    navbarTeams.style.visibility = "visible";
+    navbarTeams2.style.visibility = "visible";
   });
   navbarSideItems.addEventListener("mouseout", (evt) => {
     console.log("Event fired", evt);
-    navbarTeams.style.display = "none";
+    navbarTeams.style.visibility = "hidden";
+    navbarTeams2.style.visibility = "hidden";
   });
 
   playAnimation();

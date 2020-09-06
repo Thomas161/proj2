@@ -78,13 +78,34 @@ html {
 #navbarIconsRules {
   color: #fff;
   font-family: "Racing Sans One", cursive;
-  font-size: 20px;
+  font-size: 16px;
 }
 #teams {
-  display: none;
-  position: absolute;
+  width: 800px;
+  height: 100px;
+  left: 150px;
+  margin: 5px;
+  display: flex;
+  visibility: hidden;
+  position: relative;
   background: white;
+  z-index: 1;
 }
+#team2 {
+  width: 800px;
+  height: 100px;
+  left: 150px;
+  margin: 5px;
+  display: flex;
+  visibility: hidden;
+  position: relative;
+  background: white;
+  z-index: 1;
+}
+/* .flowwrap {
+  flex-wrap: wrap;
+  flex-direction: column;
+} */
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .topHeader {
