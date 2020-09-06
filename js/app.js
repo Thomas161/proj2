@@ -28,9 +28,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
   for (let i = 0; i < individual.length; i++) {
     console.log("list of list items", individual[i]);
     individual[i].addEventListener("mouseout", function (event) {
+      console.log("Event fired", event);
       event.target.style.color = "white";
     });
   }
+  const navbarSideItems = document.querySelector("#navbarIconsTeam");
+  const navbarTeams = document.getElementById("teams");
+  console.log("Navbar Parent", navbarSideItems);
+  console.log("Navbar Child", navbarTeams);
+
+  navbarSideItems.addEventListener("mouseover", (evt) => {
+    console.log("Event fired", evt);
+    navbarTeams.style.display = "block";
+  });
+  navbarSideItems.addEventListener("mouseout", (evt) => {
+    console.log("Event fired", evt);
+    navbarTeams.style.display = "none";
+  });
 
   playAnimation();
   let endPerf = performance.now();

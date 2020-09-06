@@ -73,10 +73,17 @@ html {
   list-style-type: none;
   top: 110px;
 }
-.navbarIcons {
+#navbarIconsTeam,
+#navbarIconsLadder,
+#navbarIconsRules {
   color: #fff;
   font-family: "Racing Sans One", cursive;
   font-size: 20px;
+}
+#teams {
+  display: none;
+  position: absolute;
+  background: white;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
