@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // let imageTimeline = gsap.timeline();
   let topHead = document.querySelector(".topHeader");
   let grid = document.querySelector(".gridNavbar");
-  let slides = document.querySelector("#slideshowContainer");
+  let slides = document.querySelector(".slideshowContainer");
   let shield = document.querySelector("#shield");
   let head = document.getElementById("prac");
   // let raids = document.getElementById("raider_pic");
