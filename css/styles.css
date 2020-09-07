@@ -38,70 +38,51 @@ html {
   background-image: url("../pics/teams.jpg");
   opacity: 0.75;
 }
-.mySlides {
-  display: none;
+
+div#slideshowContainer {
+  overflow: hidden;
+  top: 0;
 }
-.slideshowContainer {
-  width: 400px;
-  height: 400px;
+div#slideshowContainer figure img {
+  width: 100%;
+  float: left;
+}
+div#slideshowContainer figure {
+  margin: 0;
+  left: 0;
+  text-align: left;
   position: relative;
-  margin: auto;
-  background: indianred;
+  width: 100%;
+  animation: 30s slidy infinite;
 }
 
-/* .flexWrapContainer {
-  position: initial;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  width: 80%;
-  height: 100%;
-  list-style: none;
-  -ms-box-orient: horizontal;
-  flex-wrap: wrap;
-  flex-direction: row;
-} */
-/* .flex-item {
-  padding: 5px;
-  width: 300px;
-  height: 304px;
-  margin: 5px;
-  line-height: 100px;
-  color: white;
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-  background: olive;
-} */
-#raider_pic,
-#lockyer_pic,
-#dufty_pic {
-  position: relative;
-  overflow: hidden;
-  width: 300px;
-  height: 304px;
-  opacity: 0;
-}
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
+@keyframes slidy {
+  0% {
+    left: 0%;
   }
-  to {
-    opacity: 1;
+  20% {
+    left: 0%;
   }
-}
-@keyframes fade {
-  from {
-    opacity: 0.4;
+  25% {
+    left: -100%;
   }
-  to {
-    opacity: 1;
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
   }
 }
 
@@ -150,10 +131,6 @@ html {
   height: 200px;
   background: dodgerblue;
 }
-/* .flowwrap {
-  flex-wrap: wrap;
-  flex-direction: column;
-} */
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .topHeader {
