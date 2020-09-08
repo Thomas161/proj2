@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let startPerf = performance.now();
   console.log("Event fired", event);
   let t1 = gsap.timeline();
-  // let pTimeline = new SplitText();
+
   let topHead = document.querySelector(".topHeader");
   let grid = document.querySelector(".gridNavbar");
   let slides = document.querySelector(".slideshowContainer");
@@ -29,13 +29,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let nineteenth = document.getElementById("nineteenth");
   let twentieth = document.getElementById("twentieth");
   let twentyfirst = document.getElementById("twentyfirst");
+  let foot = document.querySelector(".footerContainer");
 
   let playAnimation = function () {
-    t1.fromTo(topHead, 2, { y: -200 }, { y: 0, delay: 1, ease: "bounce.out" });
-    t1.fromTo(head, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 1.5 });
-    t1.fromTo(grid, 0.7, { y: 600 }, { y: 0, delay: 1.3 });
-    t1.fromTo(shield, 0.7, { scaleX: 0 }, { scaleX: 1, delay: 0.5 });
-    t1.fromTo(slides, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.7 });
+    t1.fromTo(topHead, 1, { y: -200 }, { y: 0, delay: 1, ease: "bounce.out" });
+    t1.fromTo(head, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 1 });
+    t1.fromTo(
+      grid,
+      0.7,
+      { x: -400 },
+      { x: 0, delay: 0.4, ease: "back.out(1.5)" }
+    );
+    t1.fromTo(shield, 0.7, { scaleX: 0 }, { scaleX: 1, delay: 0.4 });
+    t1.fromTo(slides, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.4 });
+    t1.fromTo(foot, 0.7, { autoAlpha: 0 }, { autoAlpha: 1 });
     t1.staggerFromTo(
       one,
 

@@ -138,10 +138,10 @@ html {
 }
 
 .footerContainer {
-  max-width: 500px;
+  width: 710px;
   position: relative;
 
-  max-height: 150px;
+  height: 150px;
   background: dodgerblue;
   top: -175px;
   left: 215px;
