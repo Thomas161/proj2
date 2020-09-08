@@ -16,17 +16,22 @@ html {
   overflow: auto;
 }
 .modal-content {
-  background-color: #aaaaaa;
+  background-color: #f6cd61;
   margin: auto;
   padding: 20px;
   border: 2px solid #888;
   width: 80%;
+  font-family: "Permanent Marker", cursive;
+  font-size: 17px;
 }
 .close {
-  color: #aaa;
+  position: relative;
+  color: #000;
   float: right;
   font-size: 30px;
   font-weight: bold;
+  left: 0px;
+  top: 0px;
 }
 .close:hover,
 .close:focus {
