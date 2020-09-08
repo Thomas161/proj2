@@ -335,20 +335,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   playAnimation();
 
-  // showSlides();
+  //add classList on click
+  const modal = document.querySelector(".modal");
+  const hoverRules = document.querySelector("#navbarIconsRules");
+  const closeIcon = document.querySelector(".close");
 
-  // function showSlides() {
-  //   let slideIndex = 0;
-  //   let i;
-  //   let slides = document.getElementsByClassName("mySlides");
-  //   for (i = 0; i < slides.length; i++) {
-  //     slides[i].style.display = "block";
-  //   }
-
-  //   slideIndex++;
-  //   // slides[slideIndex - 1].style.display = "block";
-  //   setTimeout(showSlides, 4000);
-  // }
+  hoverRules.addEventListener("mouseover", (event) => {
+    console.log("Event fired", event.target);
+    modal.style.display = "block";
+  });
+  closeIcon.addEventListener("click", (evt) => {
+    modal.style.display = "none";
+  });
+  window.onclick = function (event) {
+    if (event.target) {
+      modal.style.display = "none";
+    }
+  };
 
   let endPerf = performance.now();
   console.log(`Entire time in milliseconds : ${endPerf - startPerf} ms`);
