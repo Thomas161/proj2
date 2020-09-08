@@ -2,15 +2,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let startPerf = performance.now();
   console.log("Event fired", event);
   let t1 = gsap.timeline();
-  // let imageTimeline = gsap.timeline();
+  // let pTimeline = new SplitText();
   let topHead = document.querySelector(".topHeader");
   let grid = document.querySelector(".gridNavbar");
   let slides = document.querySelector(".slideshowContainer");
   let shield = document.querySelector("#shield");
   let head = document.getElementById("prac");
-  // let raids = document.getElementById("raider_pic");
-  // let dufty = document.getElementById("dufty_pic");
-  // let lockyer = document.getElementById("lockyer_pic");
+  let pTag = document.getElementsByName("p");
 
   let playAnimation = function () {
     t1.fromTo(topHead, 2, { y: -200 }, { y: 0, delay: 1, ease: "bounce.out" });

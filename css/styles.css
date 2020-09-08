@@ -1,7 +1,7 @@
 body,
 html {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   background: #faebd7;
 }
 .topHeader {
@@ -56,6 +56,7 @@ html {
 }
 #subHeader {
   text-align: center;
+  font-family: "Luckiest Guy", cursive;
   /* width: 300px;
   height: 300px; */
 }
@@ -137,10 +138,10 @@ html {
 }
 
 .footerContainer {
-  width: 100%;
+  max-width: 500px;
   position: relative;
 
-  height: 138px;
+  max-height: 150px;
   background: dodgerblue;
   top: -175px;
   left: 215px;
@@ -151,6 +152,11 @@ p {
   line-height: 17px;
   position: relative;
   font-size: 10px;
+  font-family: "Gochi Hand", cursive;
+}
+.two {
+  position: relative;
+  overflow: scroll;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
