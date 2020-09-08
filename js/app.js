@@ -8,7 +8,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let slides = document.querySelector(".slideshowContainer");
   let shield = document.querySelector("#shield");
   let head = document.getElementById("prac");
-  let pTag = document.getElementsByName("p");
+  let one = document.getElementById("first");
+  let second = document.getElementById("second");
+  let third = document.getElementById("third");
+  let fourth = document.getElementById("fourth");
+  let fifth = document.getElementById("fifth");
+  let sixth = document.getElementById("sixth");
+  let seventh = document.getElementById("seventh");
+  let eigth = document.getElementById("eigth");
+  let ninth = document.getElementById("ninth");
+  let tenth = document.getElementById("tenth");
+  let eleventh = document.getElementById("eleventh");
+  let twelfth = document.getElementById("twelfth");
+  let thirteenth = document.getElementById("thirteenth");
+  let fourteenth = document.getElementById("fourteenth");
+  let fifteenth = document.getElementById("fifteenth");
+  let sixteenth = document.getElementById("sixteenth");
+  let seventeenth = document.getElementById("seventeenth");
+  let eighteenth = document.getElementById("eighteenth");
+  let nineteenth = document.getElementById("nineteenth");
+  let twentieth = document.getElementById("twentieth");
+  let twentyfirst = document.getElementById("twentyfirst");
 
   let playAnimation = function () {
     t1.fromTo(topHead, 2, { y: -200 }, { y: 0, delay: 1, ease: "bounce.out" });
@@ -16,6 +36,258 @@ document.addEventListener("DOMContentLoaded", function (event) {
     t1.fromTo(grid, 0.7, { y: 600 }, { y: 0, delay: 1.3 });
     t1.fromTo(shield, 0.7, { scaleX: 0 }, { scaleX: 1, delay: 0.5 });
     t1.fromTo(slides, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.7 });
+    t1.staggerFromTo(
+      one,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      second,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      third,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      fourth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      fifth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      sixth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      seventh,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      eigth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      ninth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      tenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      eleventh,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      twelfth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      thirteenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      fourteenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      fifteenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      sixteenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      seventeenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      eighteenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      nineteenth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      twentieth,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
+    t1.staggerFromTo(
+      twentyfirst,
+
+      0.3,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        transformOrigin: "50% 50%",
+        stagger: 0.2,
+      }
+    );
 
     t1.play();
   };
