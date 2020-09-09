@@ -335,7 +335,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   playAnimation();
 
-  //add classList on click
   const modal = document.querySelector(".modal");
   const hoverRules = document.querySelector("#navbarIconsRules");
   const closeIcon = document.querySelector(".close");

@@ -67,11 +67,14 @@ html {
 .gridNavbar {
   position: absolute;
   width: 200px;
-  height: 100%;
+  height: 700px;
   float: left;
 
   background-image: url("../pics/teams.jpg");
   opacity: 0.75;
+}
+.colTwo {
+  background: sienna;
 }
 
 .slideshowContainer {

@@ -94,7 +94,11 @@
         <div class="column">
           <img src="./pics/nrl1.jpg" alt="pic_1" id="pic" />
         </div>
-        <div class="column two">
+        <div
+          class="column two"
+          onmouseover="return changeBackground()"
+          onmouseout="return changeBack()"
+        >
           <h4 id="subHeader">Interesting History</h4>
           <p id="first">1907 - NSW Rugby League began</p>
           <p id="second">
@@ -146,5 +150,25 @@
     <footer>
       <div class="footerContainer"></div>
     </footer>
+    <script>
+      function changeBackground(event) {
+        console.dir("Event fired", event);
+        const secondColumn = document.getElementsByClassName("two");
+        try {
+          secondColumn.classList.add("colTwo");
+        } catch (error) {
+          console.log(error.stack);
+        }
+      }
+      function changeBack(event) {
+        console.log("Event fired", event);
+        const secondColumn = document.getElementsByClassName("two");
+        try {
+          secondColumn.classList.remove("colTwo");
+        } catch (error) {
+          console.log(error.stack);
+        }
+      }
+    </script>
   </body>
 </html>
