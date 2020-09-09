@@ -154,24 +154,27 @@
     <script>
       function changeBackground() {
         // console.dir("Event fired", event);
-        let secondColumn;
+        let secondColumn, pTags;
         try {
           secondColumn = document.querySelector("#separate");
-          secondColumn.classList.add("colTwo");
+          const list = ["colTwo", "changeFontColorOver"];
+          secondColumn.classList.add(...list);
+          pTags = document.getElementsByTagName("p");
+          for (let i = 0; i < pTags.length; i++) {
+            pTags[i].style.color = "#fff";
+          }
         } catch (error) {
           console.log(error.stack);
         }
-        return function (pTags) {
-          try {
-            pTags = document.querySelectorAll("p");
-            for (let i = 0; i < pTags.length; i++) {
-              pTags[i].classList.add("changeFontColorOver");
-            }
-          } catch (error) {
-            console.log(error.message);
-          }
-          return `${secondColumn} and ${pTags}`;
-        };
+        return secondColumn, pTags;
+        // return function (pTags) {
+        //   try {
+        //
+        //   } catch (error) {
+        //     console.log(error.message);
+        //   }
+        //   return `${secondColumn} and ${pTags}`;
+        // };
       }
       function changeBack() {
         // console.log("Event fired", event);
@@ -179,14 +182,14 @@
         try {
           secondColumn = document.querySelector("#separate");
           secondColumn.classList.remove("colTwo");
-          // pTags = document.querySelectorAll("p");
-          // for (let i = 0; i < pTags.length; i++) {
-          //   pTags[i].classList.remove("colTwo");
-          // }
+          pTags = document.querySelectorAll("p");
+          for (let i = 0; i < pTags.length; i++) {
+            pTags[i].style.color = "#000";
+          }
         } catch (error) {
           console.log(error.stack);
         }
-        return secondColumn;
+        return secondColumn, pTags;
       }
     </script>
   </body>
