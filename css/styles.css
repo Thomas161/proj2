@@ -76,6 +76,9 @@ html {
 .colTwo {
   background: sienna;
 }
+.changeFontColorOver {
+  color: #b3cde0;
+}
 
 .slideshowContainer {
   display: flex;

@@ -95,9 +95,10 @@
           <img src="./pics/nrl1.jpg" alt="pic_1" id="pic" />
         </div>
         <div
+          id="separate"
           class="column two"
-          onmouseover="return changeBackground()"
-          onmouseout="return changeBack()"
+          onmouseover="changeBackground()"
+          onmouseout="changeBack()"
         >
           <h4 id="subHeader">Interesting History</h4>
           <p id="first">1907 - NSW Rugby League began</p>
@@ -151,23 +152,32 @@
       <div class="footerContainer"></div>
     </footer>
     <script>
-      function changeBackground(event) {
-        console.dir("Event fired", event);
-        const secondColumn = document.getElementsByClassName("two");
+      function changeBackground() {
+        // console.dir("Event fired", event);
+        let secondColumn, pTags;
         try {
+          secondColumn = document.querySelector("#separate");
+          pTags = document.getElementsByTagName("p");
+
           secondColumn.classList.add("colTwo");
+          pTags.classList.add("changeFontColorOver");
         } catch (error) {
           console.log(error.stack);
         }
+        return secondColumn;
       }
-      function changeBack(event) {
-        console.log("Event fired", event);
-        const secondColumn = document.getElementsByClassName("two");
+      function changeBack() {
+        // console.log("Event fired", event);
+        let secondColumn, pTags;
         try {
+          secondColumn = document.querySelector("#separate");
+          pTags = document.getElementsByTagName("p");
           secondColumn.classList.remove("colTwo");
+          pTags.classList.remove("changeFontColorOver");
         } catch (error) {
           console.log(error.stack);
         }
+        return secondColumn;
       }
     </script>
   </body>
