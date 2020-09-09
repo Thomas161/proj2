@@ -154,26 +154,35 @@
     <script>
       function changeBackground() {
         // console.dir("Event fired", event);
-        let secondColumn, pTags;
+        let secondColumn;
         try {
           secondColumn = document.querySelector("#separate");
-          pTags = document.getElementsByTagName("p");
-
           secondColumn.classList.add("colTwo");
-          pTags.classList.add("changeFontColorOver");
         } catch (error) {
           console.log(error.stack);
         }
-        return secondColumn;
+        return function (pTags) {
+          try {
+            pTags = document.querySelectorAll("p");
+            for (let i = 0; i < pTags.length; i++) {
+              pTags[i].classList.add("changeFontColorOver");
+            }
+          } catch (error) {
+            console.log(error.message);
+          }
+          return `${secondColumn} and ${pTags}`;
+        };
       }
       function changeBack() {
         // console.log("Event fired", event);
         let secondColumn, pTags;
         try {
           secondColumn = document.querySelector("#separate");
-          pTags = document.getElementsByTagName("p");
           secondColumn.classList.remove("colTwo");
-          pTags.classList.remove("changeFontColorOver");
+          // pTags = document.querySelectorAll("p");
+          // for (let i = 0; i < pTags.length; i++) {
+          //   pTags[i].classList.remove("colTwo");
+          // }
         } catch (error) {
           console.log(error.stack);
         }
