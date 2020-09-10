@@ -88,55 +88,80 @@ html {
   left: 225px;
   top: -196px;
 }
-.column {
-  flex: 50%;
-}
-#pic {
+.slides1,
+.slides2,
+.slides3 {
+  position: absolute;
   width: 300px;
   height: 300px;
 }
+.slides1 {
+  animation: fade1 20s infinite;
+  -webkit-animation: fade1 20s infinite;
+}
+.slides2 {
+  animation: fade2 20s infinite;
+  -webkit-animation: fade2 20s infinite;
+}
+.slides3 {
+  animation: fade3 20s infinite;
+  -webkit-animation: fade3 20s infinite;
+}
+
+.column {
+  flex: 50%;
+}
+
 #subHeader {
   text-align: center;
   font-family: "Luckiest Guy", cursive;
-  /* width: 300px;
-  height: 300px; */
 }
 
-/* @keyframes slidy {
+@keyframes fade1 {
   0% {
-    left: 0%;
+    opacity: 1;
   }
-  20% {
-    left: 0%;
+  33% {
+    opacity: 0;
   }
-  25% {
-    left: -100%;
+  66% {
+    opacity: 0;
   }
-  45% {
-    left: -100%;
-  }
-  50% {
-    left: -200%;
-  }
-  70% {
-    left: -200%;
-  }
-  75% {
-    left: -300%;
-  }
-  95% {
-    left: -300%;
-  }
+
   100% {
-    left: -400%;
+    opacity: 1;
   }
-} */
-/* #one {
-  width: 50%;
 }
-#two {
-  width: 50%;
-} */
+@keyframes fade2 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade3 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 
 .navbarItems {
   position: relative;
