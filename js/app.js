@@ -351,6 +351,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
       modal.style.display = "none";
     }
   };
+  let timelineLogo = gsap.timeline();
+  const hovericon = () => {
+    timelineLogo.fromTo(
+      nrlLogo,
+      0.2,
+      { scale: 1 },
+      { scale: 1.1, boxShadow: "5px 10px 8px #888888" }
+    );
+    timelineLogo.play();
+  };
+  const hovericonOut = () => {
+    timelineLogo.fromTo(
+      nrlLogo,
+      0.2,
+      { scale: 1.1 },
+      { scale: 1, boxShadow: "none" }
+    );
+    timelineLogo.play();
+  };
+  const nrlLogo = document.getElementById("nrl");
+  nrlLogo.addEventListener("mouseover", hovericon, true);
+  nrlLogo.addEventListener("mouseout", hovericonOut, true);
+
+  // hovericon();
 
   let endPerf = performance.now();
   console.log(`Entire time in milliseconds : ${endPerf - startPerf} ms`);

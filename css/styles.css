@@ -81,15 +81,19 @@ html {
   background: white;
   z-index: 1;
 }
-
-.footerContainer {
-  width: 710px;
+/* footer {
   position: relative;
-
+  width: 900px;
+  height: 150px;
+  left: 18px;
+} */
+.footerContainer {
+  width: 729px;
+  position: sticky;
   height: 150px;
   background: dodgerblue;
   top: -175px;
-  left: 215px;
+  left: 213px;
 }
 p {
   color: #000;
