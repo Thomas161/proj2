@@ -52,41 +52,44 @@ html {
 
 .slideshowContainer {
   display: flex;
-  width: 600px;
-  height: 300px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 800px;
+  height: 400px;
   position: relative;
-  left: 225px;
-  top: -196px;
+  left: 204px;
+  top: -174px;
+}
+#premiershipTable {
+  background: red;
+  width: 260px;
 }
 
 #teams {
   width: 800px;
   height: 100px;
-  left: 230px;
+  left: 137px;
   margin: 5px;
   display: flex;
   visibility: hidden;
   position: relative;
   background: white;
   z-index: 1;
+  transform: scale(0.7);
 }
 #team2 {
   width: 800px;
   height: 100px;
-  left: 230px;
+  left: 137px;
   margin: 5px;
   display: flex;
   visibility: hidden;
   position: relative;
   background: white;
   z-index: 1;
+  transform: scale(0.7);
 }
-/* footer {
-  position: relative;
-  width: 900px;
-  height: 150px;
-  left: 18px;
-} */
+
 .footerContainer {
   width: 729px;
   position: sticky;
@@ -106,6 +109,7 @@ p {
 .two {
   position: relative;
   overflow: scroll;
+  width: 200px;
 }
 #nrl {
   position: absolute;

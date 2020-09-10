@@ -4,8 +4,8 @@
 .slides4,
 .slides5 {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 400px;
 }
 .slides1 {
   animation: fade1 30s infinite;
@@ -29,7 +29,9 @@
 }
 
 .column {
-  flex: 50%;
+  width: 200px;
+  height: 400px;
+  position: inherit;
 }
 
 #subHeader {
