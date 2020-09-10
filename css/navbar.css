@@ -1,0 +1,16 @@
+.navbarItems {
+  position: relative;
+  list-style-position: inside;
+  margin: 20px;
+  border-left: solid 5px red;
+  line-height: 100px;
+  background: transparent;
+  list-style-type: none;
+  top: 110px;
+}
+#navbarIconsTeam,
+#navbarIconsRules {
+  color: #fff;
+  font-family: "Racing Sans One", cursive;
+  font-size: 22px;
+}
