@@ -90,22 +90,32 @@ html {
 }
 .slides1,
 .slides2,
-.slides3 {
+.slides3,
+.slides4,
+.slides5 {
   position: absolute;
   width: 300px;
   height: 300px;
 }
 .slides1 {
-  animation: fade1 20s infinite;
-  -webkit-animation: fade1 20s infinite;
+  animation: fade1 30s infinite;
+  -webkit-animation: fade1 30s infinite;
 }
 .slides2 {
-  animation: fade2 20s infinite;
-  -webkit-animation: fade2 20s infinite;
+  animation: fade2 30s infinite;
+  -webkit-animation: fade2 30s infinite;
 }
 .slides3 {
-  animation: fade3 20s infinite;
-  -webkit-animation: fade3 20s infinite;
+  animation: fade3 30s infinite;
+  -webkit-animation: fade3 30s infinite;
+}
+.slides4 {
+  animation: fade4 30s infinite;
+  -webkit-animation: fade4 30s infinite;
+}
+.slides5 {
+  animation: fade5 30s infinite;
+  -webkit-animation: fade5 30s infinite;
 }
 
 .column {
@@ -121,13 +131,18 @@ html {
   0% {
     opacity: 1;
   }
-  33% {
+  20% {
     opacity: 0;
   }
-  66% {
+  40% {
     opacity: 0;
   }
-
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
   100% {
     opacity: 1;
   }
@@ -136,10 +151,16 @@ html {
   0% {
     opacity: 0;
   }
-  33% {
+  20% {
     opacity: 1;
   }
-  66% {
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
     opacity: 0;
   }
 
@@ -151,10 +172,58 @@ html {
   0% {
     opacity: 0;
   }
-  33% {
+  20% {
     opacity: 0;
   }
-  66% {
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade4 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade5 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
     opacity: 1;
   }
 
