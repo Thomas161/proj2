@@ -89,6 +89,30 @@ html {
   z-index: 1;
   transform: scale(0.7);
 }
+table {
+  font-size: 15px;
+  width: 100%;
+}
+th {
+  text-align: left;
+}
+td {
+  color: beige;
+  width: 100px;
+  overflow: auto;
+}
+
+.three {
+  position: relative;
+  overflow-x: scroll;
+}
+
+.tableHeader {
+  text-align: center;
+  position: relative;
+  font-family: "Faster One", cursive;
+  font-size: 25px;
+}
 
 .footerContainer {
   width: 729px;
