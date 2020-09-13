@@ -51,14 +51,14 @@ html {
 }
 
 .slideshowContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7px;
+  width: 511px;
   height: 400px;
   position: relative;
-  left: 204px;
-  top: -174px;
+  top: -210px;
+  left: 220px;
 }
 #premiershipTable {
   background: red;
@@ -105,6 +105,8 @@ td {
 .three {
   position: relative;
   overflow-x: scroll;
+  /* grid-column: 2; */
+  grid-row: 2;
 }
 
 .tableHeader {
@@ -115,12 +117,13 @@ td {
 }
 
 .footerContainer {
-  width: 729px;
+  width: 100%;
+
   position: sticky;
   height: 150px;
   background: dodgerblue;
   top: -175px;
-  left: 213px;
+  left: 0;
 }
 p {
   color: #000;
@@ -131,9 +134,10 @@ p {
   font-family: "Gochi Hand", cursive;
 }
 .two {
-  position: relative;
+  /* position: relative; */
   overflow: scroll;
-  width: 200px;
+  grid-column: 2;
+  grid-row: 1;
 }
 #nrl {
   position: absolute;
