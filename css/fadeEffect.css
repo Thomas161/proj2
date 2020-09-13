@@ -4,7 +4,7 @@
 .slides4,
 .slides5 {
   position: absolute;
-  width: 260px;
+  width: 352px;
   height: 400px;
 }
 .slides1 {
@@ -29,7 +29,7 @@
 }
 
 .column {
-  width: 200px;
+  width: 260px;
   height: 400px;
   position: inherit;
 }
