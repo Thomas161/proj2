@@ -63,7 +63,7 @@ html {
 }
 #premiershipTable {
   background: red;
-  width: 800px;
+  width: 840px;
   height: 195px;
   position: absolute;
 
@@ -120,11 +120,11 @@ html {
       #4d3a2f 0,
       #4d3a2f 99.9%
     );
-  position: relative;
+  position: absolute;
   width: 500px;
-  height: 160px;
+  height: 195px;
   margin: 0;
-  top: -22px;
+  top: 0;
 }
 
 .pie-chart cite {
@@ -138,7 +138,7 @@ html {
   position: absolute;
 
   right: 1em;
-
+  top: 15px;
   text-align: right;
 }
 .pie-chart span:after {
@@ -176,24 +176,13 @@ html {
   z-index: 1;
   transform: scale(0.7);
 }
-table {
-  font-size: 15px;
-  width: 100%;
-}
-th {
-  text-align: left;
-}
-td {
-  color: beige;
-  width: 100px;
-  overflow: auto;
-}
 
 .tableHeader {
   text-align: center;
   position: relative;
   font-family: "Faster One", cursive;
   font-size: 25px;
+  left: 263px;
 }
 
 .footerContainer {
