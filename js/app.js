@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let twentieth = document.getElementById("twentieth");
   let twentyfirst = document.getElementById("twentyfirst");
   let foot = document.querySelector(".footerContainer");
+  let chart = document.getElementById("premiershipTable");
 
   let playAnimation = function () {
     t1.fromTo(topHead, 1, { y: -200 }, { y: 0, delay: 1, ease: "bounce.out" });
@@ -42,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     );
     t1.fromTo(shield, 0.7, { scaleX: 0 }, { scaleX: 1, delay: 0.4 });
     t1.fromTo(slides, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.4 });
-    t1.fromTo(foot, 0.7, { autoAlpha: 0 }, { autoAlpha: 1 });
+    t1.fromTo(foot, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.4 });
+    t1.fromTo(premiershipTable, 0.7, { scaleY: 0 }, { scaleY: 1, delay: 0.4 });
     t1.staggerFromTo(
       one,
 
