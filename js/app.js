@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let twentieth = document.getElementById("twentieth");
   let twentyfirst = document.getElementById("twentyfirst");
   // let foot = document.querySelector(".footerContainer");
-  // let chart = document.getElementById("premiershipTable");
+  let chart = document.getElementById("premiershipTable");
 
   let playAnimation = function () {
     t1.fromTo(
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     t1.fromTo(shield, 0.7, { scaleX: 0 }, { scaleX: 1, delay: 0.4 });
     t1.fromTo(slides, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.4 });
 
-    t1.fromTo(premiershipTable, 0.7, { scaleY: 0 }, { scaleY: 1, delay: 0.4 });
+    t1.fromTo(chart, 0.7, { scaleY: 0 }, { scaleY: 1, delay: 0.4 });
     t1.staggerFromTo(
       one,
 
@@ -349,44 +349,55 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   playAnimation();
 
-  const modal = document.querySelector(".modal");
-  const hoverRules = document.querySelector("#navbarIconsRules");
-  const closeIcon = document.querySelector(".close");
+  // const modal = document.querySelector(".modal");
+  // const hoverRules = document.querySelector("#navbarIconsRules");
+  // const closeIcon = document.querySelector(".close");
 
-  hoverRules.addEventListener("mouseover", (event) => {
-    console.log("Event fired", event.target);
-    modal.style.display = "block";
-  });
-  closeIcon.addEventListener("click", (evt) => {
-    modal.style.display = "none";
-  });
-  window.onclick = function (event) {
-    if (event.target) {
-      modal.style.display = "none";
-    }
-  };
-  let timelineLogo = gsap.timeline();
-  const hovericon = () => {
-    timelineLogo.fromTo(
-      nrlLogo,
-      0.2,
-      { scale: 1 },
-      { scale: 1.1, boxShadow: "5px 10px 8px #888888" }
-    );
-    timelineLogo.play();
-  };
-  const hovericonOut = () => {
-    timelineLogo.fromTo(
-      nrlLogo,
-      0.2,
-      { scale: 1.1 },
-      { scale: 1, boxShadow: "none" }
-    );
-    timelineLogo.play();
-  };
-  const nrlLogo = document.getElementById("nrl");
-  nrlLogo.addEventListener("mouseover", hovericon, true);
-  nrlLogo.addEventListener("mouseout", hovericonOut, true);
+  // hoverRules.addEventListener("mouseover", (event) => {
+  //   console.log("Event fired", event.target);
+  //   modal.style.display = "block";
+  // });
+  // closeIcon.addEventListener("click", (evt) => {
+  //   modal.style.display = "none";
+  // });
+  // window.onclick = function (event) {
+  //   if (event.target) {
+  //     modal.style.display = "none";
+  //   }
+  // };
+
+  function addActiveClass() {
+    let a = document.querySelector("a");
+    // for (let i = 0; i < a.length; i++) {
+    a.addEventListener("click", function (event) {
+      event.preventDefault();
+      a.classList.add("active");
+    });
+  }
+  addActiveClass();
+
+  // let timelineLogo = gsap.timeline();
+  // const hovericon = () => {
+  //   timelineLogo.fromTo(
+  //     nrlLogo,
+  //     0.2,
+  //     { scale: 1 },
+  //     { scale: 1.1, boxShadow: "5px 10px 8px #888888" }
+  //   );
+  //   timelineLogo.play();
+  // };
+  // const hovericonOut = () => {
+  //   timelineLogo.fromTo(
+  //     nrlLogo,
+  //     0.2,
+  //     { scale: 1.1 },
+  //     { scale: 1, boxShadow: "none" }
+  //   );
+  //   timelineLogo.play();
+  // };
+  // const nrlLogo = document.getElementById("nrl");
+  // nrlLogo.addEventListener("mouseover", hovericon, true);
+  // nrlLogo.addEventListener("mouseout", hovericonOut, true);
 
   // hovericon();
 

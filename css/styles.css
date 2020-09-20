@@ -41,12 +41,14 @@ body {
 .navbar ul li {
   margin: 0 1rem;
   padding: 1rem;
+  background: cadetblue;
 }
 .navbar ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: #f4f4f4;
   font-family: "Sniglet", cursive;
+  font-size: 28px;
 }
 section {
   display: flex;
@@ -173,6 +175,10 @@ section#premier {
   height: 0.8em;
   border-radius: 0.2em;
   background: currentColor;
+}
+.active {
+  color: #edc949;
+  transform: scale(1.08);
 }
 
 #t1 {
