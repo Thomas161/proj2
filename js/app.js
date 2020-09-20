@@ -305,12 +305,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   let ulElements = document.getElementById("menu");
 
-  ulElements.appendChild(createNavLinks(`<a href="home">HOME</a>`));
-  ulElements.appendChild(createNavLinks(`<a href="teams">TEAMS</a>`));
-  ulElements.appendChild(createNavLinks(`<a href="slides">SLIDES</a>`));
-  ulElements.appendChild(
-    createNavLinks(`<a href="premierships">PREMIERSHIPS</a>`)
-  );
+  ulElements.appendChild(createNavLinks(`<a href="#home">HOME</a>`));
+  ulElements.appendChild(createNavLinks(`<a href="#teams">TEAMS</a>`));
+  ulElements.appendChild(createNavLinks(`<a href="#slides">SLIDES</a>`));
+  ulElements.appendChild(createNavLinks(`<a href="#premier">PREMIERSHIPS</a>`));
 
   // let section1 = document.getElementsByClassName(grid);
 
