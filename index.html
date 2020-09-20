@@ -33,43 +33,34 @@
     ></script>
   </head>
   <body>
-    <header>
-      <div class="topHeader">
-        <h3 id="prac">NRL</h3>
-        <img src="./pics/shield.png" alt="shield" id="shield" />
+    <div class="container">
+      <div class="navbar">
+        <ul></ul>
       </div>
-    </header>
-    <section>
-      <div class="gridNavbar">
-        <ul class="navbarItems">
-          <li>
-            <a href="#" id="navbarIconsTeam">Teams</a>
-          </li>
-
-          <li><a href="#" id="navbarIconsRules">Rules</a></li>
-        </ul>
-      </div>
-      <div id="teams">
-        <img src="./nrl_teams/GoldCoastTitans.png" alt="titans" />
-        <img src="./nrl_teams/ParramattaEels.png" alt="eels" />
-        <img src="./nrl_teams/SouthSydneyRabbitohs.png" alt="rabbitohs" />
-        <img src="./nrl_teams/NewcastleKnights.png" alt="knights" />
-        <img src="./nrl_teams/Bulldogs.gif" alt="dogs" />
-        <img src="./nrl_teams/CanberraRaiders.gif" alt="raiders" />
-        <img src="./nrl_teams/NewZealandWarrrios.gif" alt="warriors" />
-        <img src="./nrl_teams/NthQueenslandCowboys.gif" alt="cowboys" />
-      </div>
-      <div id="team2">
-        <img src="./nrl_teams/PenrithPanthers.png" alt="panthers" />
-        <img src="./nrl_teams/StGeorgeIllawarraDragons.gif" alt="dragons" />
-        <img src="./nrl_teams/SydneyRoosters.gif" alt="roosters" />
-        <img src="./nrl_teams/WestTigers.gif" alt="tigers" />
-        <img src="./nrl_teams/BrisbaneBroncos.gif" alt="broncos" />
-        <img src="./nrl_teams/MelbourneStorm.gif" alt="storm" />
-        <img src="./nrl_teams/ManlySeaEagles.gif" alt="eagles" />
-        <img src="./nrl_teams/CronullaSharks.gif" alt="sharks" />
-      </div>
-      <div class="modal">
+      <section id="one"></section>
+      <section id="two">
+        <div id="teams">
+          <img src="./nrl_teams/GoldCoastTitans.png" alt="titans" />
+          <img src="./nrl_teams/ParramattaEels.png" alt="eels" />
+          <img src="./nrl_teams/SouthSydneyRabbitohs.png" alt="rabbitohs" />
+          <img src="./nrl_teams/NewcastleKnights.png" alt="knights" />
+          <img src="./nrl_teams/Bulldogs.gif" alt="dogs" />
+          <img src="./nrl_teams/CanberraRaiders.gif" alt="raiders" />
+          <img src="./nrl_teams/NewZealandWarrrios.gif" alt="warriors" />
+          <img src="./nrl_teams/NthQueenslandCowboys.gif" alt="cowboys" />
+        </div>
+        <div id="team2">
+          <img src="./nrl_teams/PenrithPanthers.png" alt="panthers" />
+          <img src="./nrl_teams/StGeorgeIllawarraDragons.gif" alt="dragons" />
+          <img src="./nrl_teams/SydneyRoosters.gif" alt="roosters" />
+          <img src="./nrl_teams/WestTigers.gif" alt="tigers" />
+          <img src="./nrl_teams/BrisbaneBroncos.gif" alt="broncos" />
+          <img src="./nrl_teams/MelbourneStorm.gif" alt="storm" />
+          <img src="./nrl_teams/ManlySeaEagles.gif" alt="eagles" />
+          <img src="./nrl_teams/CronullaSharks.gif" alt="sharks" />
+        </div>
+      </section>
+      <!-- <div class="modal">
         <div class="modal-content">
           Rules <span class="close">&times;</span>
           <ul>
@@ -93,101 +84,102 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
+      <section id="three">
+        <div class="slideshowContainer">
+          <div class="column">
+            <img class="slides1" src="./pics/nrl1.jpg" alt="pic_1" id="pic" />
+            <img class="slides2" src="./pics/nrl2.jpeg" alt="pic_2" id="pic" />
+            <img class="slides3" src="./pics/nrl3.jpg" alt="pic_3" id="pic" />
+            <img class="slides4" src="./pics/nrl4.jpg" alt="pic_4" id="pic" />
+            <img class="slides5" src="./pics/nrl5.jpg" alt="pic_5" id="pic" />
+          </div>
+          <div
+            id="separate"
+            class="column two"
+            onmouseover="changeBackground()"
+            onmouseout="changeBack()"
+          >
+            <h4 id="subHeader">Interesting History</h4>
+            <p id="first">1907 - NSW Rugby League began</p>
+            <p id="second">
+              1908 - First Club formed (Glebe), then Souths, Easts, Newtown,
+              Balmain, Wests, Newcastle and Cumberland. First Premiership games
+              played in NSW. NSW wins first interstate game v QLD. Souths win
+              1st premiership.First Kangaroo tour.
+            </p>
+            <p id="third">1913 - Rugby League played in Sydney Schools</p>
+            <p id="fourth">
+              1916 - Interstate football suspended due to war (resumed 1919)
+            </p>
+            <p id="fifth">
+              1920 - First edition of The Rugby League News published
+            </p>
+            <p id="sixth">1922 - First QLD win over NSW</p>
+            <p id="seventh">1924 - First radio broadcast of Rugby League</p>
+            <p id="eigth">
+              1942 - Interstate football suspended due to war (resumed 1945)
+            </p>
+            <p id="ninth">1957 - Australia hosts 1st Rugby League World Cup</p>
+            <p id="tenth">1961 - 1st televised game</p>
+            <p id="eleventh">1965 - Souths win 10th consecutive Premiership</p>
+            <p id="twelfth">
+              1977 - 1st drawn Grand Final (Souths v Parramatta)
+            </p>
+            <p id="thirteenth">
+              1979 - 1st night Rugby League match played at SCG
+            </p>
+            <p id="fourteenth">
+              1991 - Tobacco Advertising Prohibition Bill passes parliament,
+              ending cigarette-compnay sponsorhip of sports
+            </p>
+            <p id="fifteenth">1995-1997 - Super League War</p>
+            <p id="sixteenth">1998 - National Rugby League Formed</p>
+            <p id="seventeenth">2001 - Telstra become 1st major sponsor</p>
+            <p id="eighteenth">
+              2007 - NRL grows to 16 teams, Gold Coast joining
+            </p>
+            <p id="nineteenth">
+              2009 - Two referees introduced for NRL matches
+            </p>
+            <p id="twentieth">2014 - South Sydney win their 21st premiership</p>
+            <p id="twentyfirst">
+              2015 - First ever all QLD Grand Final, Cowboys defeat Broncos
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="four">
+        <div id="premiershipTable">
+          <figure class="pie-chart">
+            <h4 class="tableHeader">Team Premierships</h4>
+            <figcaption>
+              <span id="souths">South Sydney Rabbitohs 21</span><br />
+              <span id="roosters">Sydney Roosters 15</span><br />
+              <span id="george">St George Dragons 15</span><br />
+              <span id="balmain">Balmain Tigers 11 </span><br />
+              <span id="manly">Manly-Waringah Sea Eagles 8</span><br />
+              <span id="canterbury">Canterbury-Bankstown Bulldogs 8</span><br />
+              <span id="broncos">Brisbane Broncos 6</span><br />
+              <span id="magpies">Western Suburbs Magpies 4</span><br />
+              <span id="eels">Parramatta Eeels 4</span><br />
+              <span id="jets">Newtown Jets 3</span><br />
+              <span id="storm">Melbourne Storm 3</span><br />
+              <span id="raiders">Canberra Raiders 3</span><br />
+              <span id="bears">North Sydney Bears 2</span><br />
+              <span id="panthers">Penrith Panthers 2</span><br />
+              <span id="knights">Newcastle Knights 2</span><br />
+              <span id="sharkies">Cronulla-Sutherland Sharks 1</span><br />
+              <span id="cows">Nth Queensland Cowboys 1</span><br />
+              <span id="dragons">St George Illawarra Dragons 1</span><br />
+              <span id="tigers">West Tigers 1</span>
+            </figcaption>
+            <cite>Wikipedia</cite>
+          </figure>
+        </div>
+      </section>
+    </div>
 
-      <div class="slideshowContainer">
-        <div class="column">
-          <img class="slides1" src="./pics/nrl1.jpg" alt="pic_1" id="pic" />
-          <img class="slides2" src="./pics/nrl2.jpeg" alt="pic_2" id="pic" />
-          <img class="slides3" src="./pics/nrl3.jpg" alt="pic_3" id="pic" />
-          <img class="slides4" src="./pics/nrl4.jpg" alt="pic_4" id="pic" />
-          <img class="slides5" src="./pics/nrl5.jpg" alt="pic_5" id="pic" />
-        </div>
-        <div
-          id="separate"
-          class="column two"
-          onmouseover="changeBackground()"
-          onmouseout="changeBack()"
-        >
-          <h4 id="subHeader">Interesting History</h4>
-          <p id="first">1907 - NSW Rugby League began</p>
-          <p id="second">
-            1908 - First Club formed (Glebe), then Souths, Easts, Newtown,
-            Balmain, Wests, Newcastle and Cumberland. First Premiership games
-            played in NSW. NSW wins first interstate game v QLD. Souths win 1st
-            premiership.First Kangaroo tour.
-          </p>
-          <p id="third">1913 - Rugby League played in Sydney Schools</p>
-          <p id="fourth">
-            1916 - Interstate football suspended due to war (resumed 1919)
-          </p>
-          <p id="fifth">
-            1920 - First edition of The Rugby League News published
-          </p>
-          <p id="sixth">1922 - First QLD win over NSW</p>
-          <p id="seventh">1924 - First radio broadcast of Rugby League</p>
-          <p id="eigth">
-            1942 - Interstate football suspended due to war (resumed 1945)
-          </p>
-          <p id="ninth">1957 - Australia hosts 1st Rugby League World Cup</p>
-          <p id="tenth">1961 - 1st televised game</p>
-          <p id="eleventh">1965 - Souths win 10th consecutive Premiership</p>
-          <p id="twelfth">1977 - 1st drawn Grand Final (Souths v Parramatta)</p>
-          <p id="thirteenth">
-            1979 - 1st night Rugby League match played at SCG
-          </p>
-          <p id="fourteenth">
-            1991 - Tobacco Advertising Prohibition Bill passes parliament,
-            ending cigarette-compnay sponsorhip of sports
-          </p>
-          <p id="fifteenth">1995-1997 - Super League War</p>
-          <p id="sixteenth">1998 - National Rugby League Formed</p>
-          <p id="seventeenth">2001 - Telstra become 1st major sponsor</p>
-          <p id="eighteenth">
-            2007 - NRL grows to 16 teams, Gold Coast joining
-          </p>
-          <p id="nineteenth">2009 - Two referees introduced for NRL matches</p>
-          <p id="twentieth">2014 - South Sydney win their 21st premiership</p>
-          <p id="twentyfirst">
-            2015 - First ever all QLD Grand Final, Cowboys defeat Broncos
-          </p>
-        </div>
-      </div>
-      <div id="premiershipTable">
-        <figure class="pie-chart">
-          <h4 class="tableHeader">Team Premierships</h4>
-          <figcaption>
-            <span id="souths">South Sydney Rabbitohs 21</span><br />
-            <span id="roosters">Sydney Roosters 15</span><br />
-            <span id="george">St George Dragons 15</span><br />
-            <span id="balmain">Balmain Tigers 11 </span><br />
-            <span id="manly">Manly-Waringah Sea Eagles 8</span><br />
-            <span id="canterbury">Canterbury-Bankstown Bulldogs 8</span><br />
-            <span id="broncos">Brisbane Broncos 6</span><br />
-            <span id="magpies">Western Suburbs Magpies 4</span><br />
-            <span id="eels">Parramatta Eeels 4</span><br />
-            <span id="jets">Newtown Jets 3</span><br />
-            <span id="storm">Melbourne Storm 3</span><br />
-            <span id="raiders">Canberra Raiders 3</span><br />
-            <span id="bears">North Sydney Bears 2</span><br />
-            <span id="panthers">Penrith Panthers 2</span><br />
-            <span id="knights">Newcastle Knights 2</span><br />
-            <span id="sharkies">Cronulla-Sutherland Sharks 1</span><br />
-            <span id="cows">Nth Queensland Cowboys 1</span><br />
-            <span id="dragons">St George Illawarra Dragons 1</span><br />
-            <span id="tigers">West Tigers 1</span>
-          </figcaption>
-          <cite>Wikipedia</cite>
-        </figure>
-      </div>
-    </section>
-    <footer>
-      <div class="footerContainer">
-        <a href="https://www.nrl.com/">
-          <img src="./pics/official-logo.jpeg" alt="" id="nrl"
-        /></a>
-      </div>
-    </footer>
     <script>
       function changeBackground() {
         // console.dir("Event fired", event);
