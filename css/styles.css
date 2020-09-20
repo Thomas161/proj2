@@ -37,6 +37,7 @@ body {
 
 .navbar {
   position: fixed;
+  visibility: hidden;
   top: 0;
   z-index: 1;
   display: flex;
@@ -53,11 +54,32 @@ body {
 .navbar ul li {
   margin: 0 1rem;
   padding: 1rem;
+
 }
 .navbar ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: #f4f4f4;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+section#one{
+  background: url('../pics/unsplash1.jpg') no-repeat center center/cover;
+}
+section#two{
+  background: url('../pics/unsplash2.jpg') no-repeat center center/cover;
+}
+section#three{
+  background: url('../pics/unsplash4.jpg') no-repeat center center/cover;
+}
+section#four{
+  background: url('../pics/unsplash3.jpg') no-repeat center center/cover;
 }
 .gridNavbar {
   position: absolute;
@@ -240,7 +262,7 @@ p {
   height: 150px;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 599px) {
+/* @media only screen and (min-width: 320px) and (max-width: 599px) {
   body,
   html {
     width: 100%;
@@ -349,4 +371,4 @@ p {
   .topHeader {
     width: 100%;
   }
-}
+} */

@@ -3,11 +3,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   console.log("Event fired", event);
   let t1 = gsap.timeline();
 
-  let topHead = document.querySelector(".topHeader");
-  let grid = document.querySelector(".gridNavbar");
+  let grid = document.querySelector(".navbar");
   let slides = document.querySelector(".slideshowContainer");
   let shield = document.querySelector("#shield");
-  let head = document.getElementById("prac");
   let one = document.getElementById("first");
   let second = document.getElementById("second");
   let third = document.getElementById("third");
@@ -29,21 +27,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let nineteenth = document.getElementById("nineteenth");
   let twentieth = document.getElementById("twentieth");
   let twentyfirst = document.getElementById("twentyfirst");
-  let foot = document.querySelector(".footerContainer");
-  let chart = document.getElementById("premiershipTable");
+  // let foot = document.querySelector(".footerContainer");
+  // let chart = document.getElementById("premiershipTable");
 
   let playAnimation = function () {
-    t1.fromTo(topHead, 1, { y: -200 }, { y: 0, delay: 1, ease: "bounce.out" });
-    t1.fromTo(head, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 1 });
     t1.fromTo(
       grid,
-      0.7,
-      { x: -400 },
-      { x: 0, delay: 0.4, ease: "back.out(1.5)" }
+      1,
+      { y: -200 },
+      { y: 0, delay: 1, visibility: "visible", ease: "bounce.out" }
     );
+
     t1.fromTo(shield, 0.7, { scaleX: 0 }, { scaleX: 1, delay: 0.4 });
     t1.fromTo(slides, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.4 });
-    t1.fromTo(foot, 0.7, { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.4 });
+
     t1.fromTo(premiershipTable, 0.7, { scaleY: 0 }, { scaleY: 1, delay: 0.4 });
     t1.staggerFromTo(
       one,
@@ -301,39 +298,56 @@ document.addEventListener("DOMContentLoaded", function (event) {
     t1.play();
   };
 
-  let items = document.querySelector(".navbarItems");
-  let individual = items.getElementsByTagName("li");
+  function createNavLinks(title) {
+    let liElements = document.createElement("li");
+    liElements.innerHTML = title;
+    return liElements;
+  }
+  let ulElements = document.getElementById("menu");
+
+  ulElements.appendChild(createNavLinks(`<a href="home">HOME</a>`));
+  ulElements.appendChild(createNavLinks(`<a href="teams">TEAMS</a>`));
+  ulElements.appendChild(createNavLinks(`<a href="slides">SLIDES</a>`));
+  ulElements.appendChild(
+    createNavLinks(`<a href="premierships">PREMIERSHIPS</a>`)
+  );
+
+  // let section1 = document.getElementsByClassName(grid);
+
+  // let items = document.querySelector(".navbar");
+
+  // items.appendChild(ulElements).appendChild(liElements);
   //   console.log(individual);
 
-  for (let i = 0; i < individual.length; i++) {
-    console.log("list of list items", individual[i]);
-    individual[i].addEventListener("mouseover", function (event) {
-      event.target.style.color = "red";
-    });
-  }
-  for (let i = 0; i < individual.length; i++) {
-    console.log("list of list items", individual[i]);
-    individual[i].addEventListener("mouseout", function (event) {
-      console.log("Event fired", event);
-      event.target.style.color = "white";
-    });
-  }
-  const navbarSideItems = document.querySelector("#navbarIconsTeam");
-  const navbarTeams = document.getElementById("teams");
-  const navbarTeams2 = document.getElementById("team2");
-  console.log("Navbar Parent", navbarSideItems);
-  console.log("Navbar Child", navbarTeams);
-  console.log("Navbar Child", navbarTeams2);
-  navbarSideItems.addEventListener("mouseover", (evt) => {
-    console.log("Event fired", evt);
-    navbarTeams.style.visibility = "visible";
-    navbarTeams2.style.visibility = "visible";
-  });
-  navbarSideItems.addEventListener("mouseout", (evt) => {
-    console.log("Event fired", evt);
-    navbarTeams.style.visibility = "hidden";
-    navbarTeams2.style.visibility = "hidden";
-  });
+  // for (let i = 0; i < individual.length; i++) {
+  //   console.log("list of list items", individual[i]);
+  //   individual[i].addEventListener("mouseover", function (event) {
+  //     event.target.style.color = "red";
+  //   });
+  // }
+  // for (let i = 0; i < individual.length; i++) {
+  //   console.log("list of list items", individual[i]);
+  //   individual[i].addEventListener("mouseout", function (event) {
+  //     console.log("Event fired", event);
+  //     event.target.style.color = "white";
+  //   });
+  // }
+  // const navbarSideItems = document.querySelector("#navbarIconsTeam");
+  // const navbarTeams = document.getElementById("teams");
+  // const navbarTeams2 = document.getElementById("team2");
+  // console.log("Navbar Parent", navbarSideItems);
+  // console.log("Navbar Child", navbarTeams);
+  // console.log("Navbar Child", navbarTeams2);
+  // navbarSideItems.addEventListener("mouseover", (evt) => {
+  //   console.log("Event fired", evt);
+  //   navbarTeams.style.visibility = "visible";
+  //   navbarTeams2.style.visibility = "visible";
+  // });
+  // navbarSideItems.addEventListener("mouseout", (evt) => {
+  //   console.log("Event fired", evt);
+  //   navbarTeams.style.visibility = "hidden";
+  //   navbarTeams2.style.visibility = "hidden";
+  // });
 
   playAnimation();
 
