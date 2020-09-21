@@ -1,6 +1,5 @@
-/* @import "./modal.css"; */
+@import "./modal.css";
 @import "./fadeEffect.css";
-/* @import "./navbar.css"; */
 @import "./legend.css";
 
 * {
@@ -216,15 +215,6 @@ section#premier {
   left: 15px;
 }
 
-p {
-  color: #fff;
-  margin: 5px;
-  line-height: 17px;
-  position: relative;
-  font-size: 13px;
-  font-family: "Gochi Hand", cursive;
-  /* background: #6a405f; */
-}
 .two {
   position: relative;
   overflow: scroll;

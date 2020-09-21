@@ -37,61 +37,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
   ulElements.appendChild(createNavLinks(`<a href="#slides">SLIDES</a>`));
   ulElements.appendChild(createNavLinks(`<a href="#premier">PREMIERSHIPS</a>`));
 
-  // let section1 = document.getElementsByClassName(grid);
-
-  // let items = document.querySelector(".navbar");
-
-  // items.appendChild(ulElements).appendChild(liElements);
-  //   console.log(individual);
-
-  // for (let i = 0; i < individual.length; i++) {
-  //   console.log("list of list items", individual[i]);
-  //   individual[i].addEventListener("mouseover", function (event) {
-  //     event.target.style.color = "red";
-  //   });
-  // }
-  // for (let i = 0; i < individual.length; i++) {
-  //   console.log("list of list items", individual[i]);
-  //   individual[i].addEventListener("mouseout", function (event) {
-  //     console.log("Event fired", event);
-  //     event.target.style.color = "white";
-  //   });
-  // }
-  // const navbarSideItems = document.querySelector("#navbarIconsTeam");
-  // const navbarTeams = document.getElementById("teams");
-  // const navbarTeams2 = document.getElementById("team2");
-  // console.log("Navbar Parent", navbarSideItems);
-  // console.log("Navbar Child", navbarTeams);
-  // console.log("Navbar Child", navbarTeams2);
-  // navbarSideItems.addEventListener("mouseover", (evt) => {
-  //   console.log("Event fired", evt);
-  //   navbarTeams.style.visibility = "visible";
-  //   navbarTeams2.style.visibility = "visible";
-  // });
-  // navbarSideItems.addEventListener("mouseout", (evt) => {
-  //   console.log("Event fired", evt);
-  //   navbarTeams.style.visibility = "hidden";
-  //   navbarTeams2.style.visibility = "hidden";
-  // });
-
   playAnimation();
+  function createRules(list) {
+    const elem = document.createElement("li");
+    elem.innerHTML = list;
+    return elem;
+  }
+  let ulElement = document.querySelector("#rules");
+  let players, objective, scoring, ball, scrum;
+  players = "17 Players per side, 13 on field at a time, 4 on the bench";
+  objective = "Objective of game is to outscore other side";
+  scoring = `Scoring points:
+  <strong
+    >4 points awarded for try, 2 points for successful try
+    conversion, 2 points for a penalty goal, and 1 for a field
+    goal</strong
+  >`;
+  ball =
+    "Ball is passed between players, but must be passed backward,\n failure to do so results in a forward pass/penalty to other side";
+  scrum =
+    "If ball carrier loses the ball and hits the ground in front of\n him, a knock on is called and a scrum is formed";
 
-  // const modal = document.querySelector(".modal");
-  // const hoverRules = document.querySelector("#navbarIconsRules");
-  // const closeIcon = document.querySelector(".close");
-
-  // hoverRules.addEventListener("mouseover", (event) => {
-  //   console.log("Event fired", event.target);
-  //   modal.style.display = "block";
-  // });
-  // closeIcon.addEventListener("click", (evt) => {
-  //   modal.style.display = "none";
-  // });
-  // window.onclick = function (event) {
-  //   if (event.target) {
-  //     modal.style.display = "none";
-  //   }
-  // };
+  ulElement.appendChild(createRules(players));
+  ulElement.appendChild(createRules(objective));
+  ulElement.appendChild(createRules(scoring));
+  ulElement.appendChild(createRules(ball));
+  ulElement.appendChild(createRules(scrum));
 
   function addActiveClass() {
     let a = document.querySelector("a");
@@ -411,6 +382,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
      stagger: 0.2,
    }
  );
+
+   const modal = document.querySelector(".modal");
+  const hoverRules = document.querySelector("#navbarIconsRules");
+  const closeIcon = document.querySelector(".close");
+
+  hoverRules.addEventListener("mouseover", (event) => {
+    console.log("Event fired", event.target);
+    modal.style.display = "block";
+  });
+  closeIcon.addEventListener("click", (evt) => {
+    modal.style.display = "none";
+  });
+  window.onclick = function (event) {
+    if (event.target) {
+      modal.style.display = "none";
+    }
+  };
+  let section1 = document.getElementsByClassName(grid);
+
+  let items = document.querySelector(".navbar");
+
+  items.appendChild(ulElements).appendChild(liElements);
+    console.log(individual);
+
+  for (let i = 0; i < individual.length; i++) {
+    console.log("list of list items", individual[i]);
+    individual[i].addEventListener("mouseover", function (event) {
+      event.target.style.color = "red";
+    });
+  }
+  for (let i = 0; i < individual.length; i++) {
+    console.log("list of list items", individual[i]);
+    individual[i].addEventListener("mouseout", function (event) {
+      console.log("Event fired", event);
+      event.target.style.color = "white";
+    });
+  }
+  const navbarSideItems = document.querySelector("#navbarIconsTeam");
+  const navbarTeams = document.getElementById("teams");
+  const navbarTeams2 = document.getElementById("team2");
+  console.log("Navbar Parent", navbarSideItems);
+  console.log("Navbar Child", navbarTeams);
+  console.log("Navbar Child", navbarTeams2);
+  navbarSideItems.addEventListener("mouseover", (evt) => {
+    console.log("Event fired", evt);
+    navbarTeams.style.visibility = "visible";
+    navbarTeams2.style.visibility = "visible";
+  });
+  navbarSideItems.addEventListener("mouseout", (evt) => {
+    console.log("Event fired", evt);
+    navbarTeams.style.visibility = "hidden";
+    navbarTeams2.style.visibility = "hidden";
+  });
+
 
 fution changeBackground() {
    console.dir("Event fired", event);
