@@ -1,6 +1,6 @@
-@import "./modal.css";
+/* @import "./modal.css"; */
 @import "./fadeEffect.css";
-@import "./navbar.css";
+/* @import "./navbar.css"; */
 @import "./legend.css";
 
 * {
@@ -234,8 +234,8 @@ p {
 }
 #nrl {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 75px;
 }
 
 /* @media only screen and (min-width: 320px) and (max-width: 599px) {
