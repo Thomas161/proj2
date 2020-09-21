@@ -41,6 +41,7 @@ body {
   margin: 0 1rem;
   padding: 1rem;
   background: cadetblue;
+  list-style: none;
 }
 .navbar ul li a {
   text-decoration: none;

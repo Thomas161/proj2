@@ -1,6 +1,36 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   let startPerf = performance.now();
   console.log("Event fired", event);
+
+  const home = document.getElementById("home");
+  const bounding = home.getBoundingClientRect();
+  console.log(bounding);
+  // window.addEventListener(
+  //   "scroll",
+  //   function (event) {
+  //     const home = document.getElementById("home");
+  //     const bounding = home.getBoundingClientRect();
+  //     console.log(bounding);
+  //     if (isInViewport(bounding)) {
+  //       console.log("In the viewport!");
+  //     } else {
+  //       console.log("Not in the viewport... whomp whomp");
+  //     }
+  //   },
+  //   false
+  // );
+
+  // let isInViewport = (elem) => {
+  //   let limits = elem.getBoundingClientRect();
+  //   return (
+  //     limits.top >= 0 &&
+  //     limits.left >= 0 &&
+  //     limits.bottom <=
+  //       (window.innerWidth || document.documentElement.clientWidth) &&
+  //     limits.bottom <=
+  //       (window.innerHeight || document.documentElement.clientHeight)
+  //   );
+  // };
   let t1 = gsap.timeline();
 
   let grid = document.querySelector(".navbar");
