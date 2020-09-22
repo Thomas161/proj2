@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let startPerf = performance.now();
   console.log("Event fired", event);
 
+  /**GREENSOCK ANIMATIONS */
   let t1 = gsap.timeline();
-
   let grid = document.querySelector(".navbar");
   let chart = document.getElementById("premiershipTable");
 
@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     t1.play();
   };
+  playAnimation();
 
+  /**NAVBAR LINKS */
   function createNavLinks(title) {
     let liElements = document.createElement("li");
     liElements.innerHTML = title;
@@ -36,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     createNavLinks(`<a href="#premier" id="s4" >PREMIERSHIPS</a>`)
   );
 
-  playAnimation();
-
+  /**Modal List */
   function createRules(list) {
     const elem = document.createElement("li");
     elem.innerHTML = list;
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   addActiveClass();
 
+  /**NRL LOGO POP UP/POP BACK SCALE EFFECT */
   let timelineLogo = gsap.timeline();
   const hovericon = () => {
     timelineLogo.fromTo(
@@ -97,22 +99,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
   nrlLogo.addEventListener("mouseover", hovericon, true);
   nrlLogo.addEventListener("mouseout", hovericonOut, true);
 
-  // hovericon();
-
   //scroll to sections smoothly
-
-  var h = document.getElementById("s1");
-
+  var h = document.getElementById("home");
   let t = document.getElementById("s2");
-
   var sli = document.getElementById("s3");
-
   var pre = document.getElementById("s4");
 
-  h.onclick = document.documentElement.scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
+  h.addEventListener("click", function (event) {
+    event.preventDefault();
+    console.log("clicked");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
   t.onclick = document.documentElement.scrollIntoView({
     behavior: "smooth",
     inline: "center",
@@ -126,6 +124,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     inline: "center",
   });
 
+  let myButton = document.getElementById("goTop");
+  let doc = document;
+  window.onscroll = () => {
+    scrollFunc();
+  };
+
+  let scrollFunc = () => {
+    if (doc.body.scrollTop > 20 || doc.documentElement.scrollTop > 20) {
+      myButton.style.display = "block";
+    } else {
+      myButton.style.display = "none";
+    }
+  };
+
   let endPerf = performance.now();
   console.log(`Entire time in milliseconds : ${endPerf - startPerf} ms`);
 
@@ -137,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // let windowHeight = window.innerHeight;
   // console.log("Window height", windowHeight);
 
+  /**Check if section in viewport */
   var isInView = function (elem) {
     var distance = elem.getBoundingClientRect();
     console.log(distance);

@@ -38,6 +38,7 @@
   </head>
   <body>
     <div class="container">
+      <button onclick="scrollTop()" id="goTop">Top</button>
       <div class="navbar">
         <img src="./pics/official-logo.jpeg" alt="" id="nrl" />
         <ul id="menu"></ul>
@@ -162,15 +163,11 @@
         </div>
       </section>
     </div>
-    <!-- <script>
-      function smoothScroll() {
-        var s = document.getElementById("s2");
-        console.log(s.outerHTML);
-        s.scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-        });
+    <script>
+      function scrollTop() {
+        return (document.documentElement.scrollTop = 0);
       }
-    </script> -->
+    </script>
+    -
   </body>
 </html>
