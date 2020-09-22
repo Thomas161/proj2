@@ -4,7 +4,7 @@
 .slides4,
 .slides5 {
   position: absolute;
-  width: 352px;
+  width: 400px;
   height: 400px;
 }
 .slides1 {
@@ -29,14 +29,17 @@
 }
 
 .column {
-  width: 260px;
+  width: 400px;
   height: 400px;
-  position: inherit;
+  position: relative;
 }
 
 #subHeader {
   text-align: center;
   font-family: "Luckiest Guy", cursive;
+  color: deepskyblue;
+  border-style: dashed;
+  font-size: 23px;
 }
 
 @keyframes fade1 {

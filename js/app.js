@@ -2,6 +2,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let startPerf = performance.now();
   console.log("Event fired", event);
 
+  let sectionsAll = document.getElementsByTagName("section");
+  // console.log("Length of sections : ", sectionsAll.length);// length = 4
+  console.log("Sections : ", sectionsAll); //section HTML collections
+
+  /**Check if section in viewport */
+
+  window.addEventListener(
+    "scroll",
+    function (event) {
+      // for (var i in sectionsAll)
+      if (isInView(sectionsAll)) {
+        console.log("In view");
+      } else {
+        console.log("Not in view");
+      }
+    },
+    false
+  );
+  var isInView = function (elem) {
+    var distance = elem.getBoundingClientRect();
+    console.log(distance);
+    return (
+      distance.top >= 0 &&
+      distance.left >= 0 &&
+      distance.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      distance.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
   /**GREENSOCK ANIMATIONS */
   let t1 = gsap.timeline();
   let grid = document.querySelector(".navbar");
@@ -29,13 +60,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   let ulElements = document.getElementById("menu");
 
-  ulElements.appendChild(createNavLinks(`<a href="#home" id="s1">HOME</a>`));
-  ulElements.appendChild(createNavLinks(`<a href="#teams" id="s2" >TEAMS</a>`));
   ulElements.appendChild(
-    createNavLinks(`<a href="#slides" id="s3" >SLIDES</a>`)
+    createNavLinks(`<a href="#home"  id="first">HOME</a>`)
   );
   ulElements.appendChild(
-    createNavLinks(`<a href="#premier" id="s4" >PREMIERSHIPS</a>`)
+    createNavLinks(`<a href="#teams"  id="second" >TEAMS</a>`)
+  );
+  ulElements.appendChild(
+    createNavLinks(`<a href="#slides"  id="third" >SLIDES</a>`)
+  );
+  ulElements.appendChild(
+    createNavLinks(`<a href="#premier" id="fourth" >PREMIERSHIPS</a>`)
   );
 
   /**Modal List */
@@ -99,81 +134,52 @@ document.addEventListener("DOMContentLoaded", function (event) {
   nrlLogo.addEventListener("mouseover", hovericon, true);
   nrlLogo.addEventListener("mouseout", hovericonOut, true);
 
-  //scroll to sections smoothly
-  var h = document.getElementById("home");
-  let t = document.getElementById("s2");
-  var sli = document.getElementById("s3");
-  var pre = document.getElementById("s4");
+  $(".navbar a").on("click", function (e) {
+    console.log(this.hash);
+    if (this.hash !== "") {
+      e.preventDefault();
+      const hash = this.hash;
 
-  h.addEventListener("click", function (event) {
-    event.preventDefault();
-    console.log("clicked");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  t.onclick = document.documentElement.scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
-  });
-  sli.onclick = document.documentElement.scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
-  });
-  pre.onclick = document.documentElement.scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
-  });
-
-  let myButton = document.getElementById("goTop");
-  let doc = document;
-  window.onscroll = () => {
-    scrollFunc();
-  };
-
-  let scrollFunc = () => {
-    if (doc.body.scrollTop > 20 || doc.documentElement.scrollTop > 20) {
-      myButton.style.display = "block";
-    } else {
-      myButton.style.display = "none";
+      $("html,body").animate(
+        {
+          scrollTop: $(hash).offset().top,
+        },
+        800
+      );
     }
-  };
+  });
+
+  //scroll to sections smoothly
+  // let home = document.getElementById("first");
+  // let team = document.getElementById("second");
+  // let slide = document.getElementById("third");
+  // let prem = document.getElementById("fourth");
+
+  // let myButton = document.getElementById("goTop");
+
+  // function scrollFunc() {
+  //   if (
+  //     document.body.scrollTop > 20 ||
+  //     document.documentElement.scrollTop > 20
+  //   ) {
+  //     myButton.style.display = "block";
+  //   } else {
+  //     myButton.style.display = "none";
+  //   }
+  // }
+
+  // myButton.addEventListener("click", function () {
+  //   document.documentElement.scrollTop = 0;
+  // });
+  // window.onscroll = () => {
+  //   scrollFunc();
+  // };
+
+  // console.log(window.scrollY);
+  // window.addEventListener("scroll", () => {
+  //   console.log("scrolling");
+  // });
 
   let endPerf = performance.now();
   console.log(`Entire time in milliseconds : ${endPerf - startPerf} ms`);
-
-  // let scr = window.scrollY;
-  // let another = window.scrollY;
-  // console.log("scrolled page", another);
-  // let scrollable = document.documentElement.scrollHeight;
-  // console.log("scrolled page", scrollable);
-  // let windowHeight = window.innerHeight;
-  // console.log("Window height", windowHeight);
-
-  /**Check if section in viewport */
-  var isInView = function (elem) {
-    var distance = elem.getBoundingClientRect();
-    console.log(distance);
-    return (
-      distance.top >= 0 &&
-      distance.left >= 0 &&
-      distance.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      distance.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
-    );
-  };
-
-  let sectionsAll = document.querySelector("#home");
-
-  window.addEventListener(
-    "scroll",
-    function (event) {
-      if (isInView(sectionsAll)) {
-        console.log("In view");
-      } else {
-        console.log("Not in view");
-      }
-    },
-    false
-  );
 });
