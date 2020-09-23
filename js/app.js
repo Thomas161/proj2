@@ -16,20 +16,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   /**Check if section in viewport */
 
-  function isInView(elem) {
-    var distance = elem.getBoundingClientRect();
-    // console.log(distance);
-    return (
-      distance.top >= 0 &&
-      distance.left >= 0 &&
-      distance.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      distance.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
+  // function isInView(elem) {
+  //   var distance = elem.getBoundingClientRect();
+  //   // console.log(distance);
+  //   return (
+  //     distance.top >= 0 &&
+  //     distance.left >= 0 &&
+  //     distance.bottom <=
+  //       (window.innerHeight || document.documentElement.clientHeight) &&
+  //     distance.right <=
+  //       (window.innerWidth || document.documentElement.clientWidth)
+  //   );
+  // }
 
-  window.addEventListener("scroll", isInView(sectionsAll));
+  // window.addEventListener("scroll", isInView(sectionsAll));
 
   let playAnimation = function () {
     t1.fromTo(
@@ -114,22 +114,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     for (let i = 0; i < sectionsAll.length; i++) {
       aTags[i].addEventListener("click", function () {
         let current = document.getElementsByClassName("active");
-        console.log(current);
+        // console.log(current);
         if (current.length > 0) {
           current[0].className = current[0].className.replace("active", "");
+        } else {
+          this.className = " active";
         }
-        this.className = " active";
       });
-      // if (placeOfSection.top <= 150 && placeOfSection.bottom >= 150) {
-      //   const id = s.getAttribute("id");
-      //   console.log(id);
-      //   document.querySelector(id).classList.add("active-class");
-      //   s.classList.add("active-class");
-      // } else {
-      //   const id = s.getAttribute("id");
-      //   document.querySelector(id).classList.remove("active-class");
-      //   s.classList.remove("active-class");
-      // }
     }
   }
   document.addEventListener("scroll", function () {
