@@ -1,10 +1,18 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  let startPerf = performance.now();
   console.log("Event fired", event);
 
-  let sectionsAll = document.getElementsByTagName("section");
+  /**Global Variables */
+  let startPerf = performance.now();
+  let sectionsAll = document.querySelectorAll("section");
+  let myButton = document.getElementById("goTop");
+  let ulElements = document.getElementById("menu");
+  let aTags = document.getElementsByTagName("a");
+  /**GREENSOCK ANIMATIONS (new gsap timeline)*/
+  let t1 = gsap.timeline();
+  let grid = document.querySelector(".navbar");
+  let chart = document.getElementById("premiershipTable");
   // console.log("Length of sections : ", sectionsAll.length);// length = 4
-  console.log("Sections : ", sectionsAll); //section HTML collections
+  // console.log("Sections : ", sectionsAll); //section HTML collections
 
   /**Check if section in viewport */
 
@@ -22,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   );
   var isInView = function () {
     var distance = document.documentElement.getBoundingClientRect();
-    console.log(distance);
+    // console.log(distance);
     return (
       distance.top >= 0 &&
       distance.left >= 0 &&
@@ -32,11 +40,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         (window.innerWidth || document.documentElement.clientWidth)
     );
   };
-
-  /**GREENSOCK ANIMATIONS */
-  let t1 = gsap.timeline();
-  let grid = document.querySelector(".navbar");
-  let chart = document.getElementById("premiershipTable");
 
   let playAnimation = function () {
     t1.fromTo(
@@ -58,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     liElements.innerHTML = title;
     return liElements;
   }
-  let ulElements = document.getElementById("menu");
 
   ulElements.appendChild(
     createNavLinks(`<a href="#home"  id="first">HOME</a>`)
@@ -117,15 +119,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     e.preventDefault();
     document.querySelector("#premier").scrollIntoView({ behavior: "smooth" });
   });
+
   function addActiveClass() {
-    let a = document.querySelector("a");
-    // for (let i = 0; i < a.length; i++) {
-    a.addEventListener("click", function (event) {
-      event.preventDefault();
-      a.classList.add("active");
-    });
+    for (let i = 0; i < sectionsAll.length; i++) {
+      aTags[i].addEventListener("click", function () {
+        let current = document.getElementsByClassName("active");
+        console.log(current);
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace("active", "");
+        }
+        this.className = " active";
+      });
+      // if (placeOfSection.top <= 150 && placeOfSection.bottom >= 150) {
+      //   const id = s.getAttribute("id");
+      //   console.log(id);
+      //   document.querySelector(id).classList.add("active-class");
+      //   s.classList.add("active-class");
+      // } else {
+      //   const id = s.getAttribute("id");
+      //   document.querySelector(id).classList.remove("active-class");
+      //   s.classList.remove("active-class");
+      // }
+    }
   }
-  addActiveClass();
+  document.addEventListener("scroll", function () {
+    addActiveClass();
+  });
 
   /**NRL LOGO POP UP/POP BACK SCALE EFFECT */
   let timelineLogo = gsap.timeline();
@@ -151,30 +170,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
   nrlLogo.addEventListener("mouseover", hovericon, true);
   nrlLogo.addEventListener("mouseout", hovericonOut, true);
 
-  // let myButton = document.getElementById("goTop");
+  window.onscroll = () => {
+    scrollFunc();
+  };
 
-  // function scrollFunc() {
-  //   if (
-  //     document.body.scrollTop > 20 ||
-  //     document.documentElement.scrollTop > 20
-  //   ) {
-  //     myButton.style.display = "block";
-  //   } else {
-  //     myButton.style.display = "none";
-  //   }
-  // }
+  function scrollFunc() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      myButton.style.display = "block";
+    } else {
+      myButton.style.display = "none";
+    }
+  }
 
-  // myButton.addEventListener("click", function () {
-  //   document.documentElement.scrollTop = 0;
-  // });
-  // window.onscroll = () => {
-  //   scrollFunc();
-  // };
-
-  // console.log(window.scrollY);
-  // window.addEventListener("scroll", () => {
-  //   console.log("scrolling");
-  // });
+  myButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
   let endPerf = performance.now();
   console.log(`Entire time in milliseconds : ${endPerf - startPerf} ms`);

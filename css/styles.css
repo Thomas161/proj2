@@ -58,6 +58,9 @@ body {
   background: cadetblue;
   list-style: none;
 }
+.navbar ul li:hover {
+  background: firebrick;
+}
 .navbar ul li a {
   text-decoration: none;
   text-transform: uppercase;
@@ -89,9 +92,6 @@ section#premier {
 
 .colTwo {
   background: #96ceb4;
-}
-.changeFontColorOver {
-  color: #e45219;
 }
 
 .slideshowContainer {
@@ -193,7 +193,7 @@ section#premier {
 }
 .active {
   color: #edc949;
-  transform: scale(1.08);
+  background: darkred;
 }
 
 #t1 {
@@ -212,10 +212,8 @@ section#premier {
 #t2 {
   width: 800px;
   height: 228px;
-
   margin: 5px;
   display: flex;
-
   position: static;
   background: white;
   z-index: 1;
