@@ -16,20 +16,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   /**Check if section in viewport */
 
-  window.addEventListener(
-    "scroll",
-    function (event) {
-      // for (var i in sectionsAll)
-      if (isInView()) {
-        console.log("In view");
-      } else {
-        console.log("Not in view");
-      }
-    },
-    false
-  );
-  var isInView = function () {
-    var distance = document.documentElement.getBoundingClientRect();
+  function isInView(elem) {
+    var distance = elem.getBoundingClientRect();
     // console.log(distance);
     return (
       distance.top >= 0 &&
@@ -39,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
       distance.right <=
         (window.innerWidth || document.documentElement.clientWidth)
     );
-  };
+  }
+
+  window.addEventListener("scroll", isInView(sectionsAll));
 
   let playAnimation = function () {
     t1.fromTo(
