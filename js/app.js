@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     "scroll",
     function (event) {
       // for (var i in sectionsAll)
-      if (isInView(sectionsAll)) {
+      if (isInView()) {
         console.log("In view");
       } else {
         console.log("Not in view");
@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
     false
   );
-  var isInView = function (elem) {
-    var distance = elem.getBoundingClientRect();
+  var isInView = function () {
+    var distance = document.documentElement.getBoundingClientRect();
     console.log(distance);
     return (
       distance.top >= 0 &&
@@ -100,6 +100,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
   ulElement.appendChild(createRules(ball));
   ulElement.appendChild(createRules(scrum));
 
+  /**JQuery scroll to section */
+  $("#first").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#home").scrollIntoView({ behavior: "smooth" });
+  });
+  $("#second").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#teams").scrollIntoView({ behavior: "smooth" });
+  });
+  $("#third").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#slides").scrollIntoView({ behavior: "smooth" });
+  });
+  $("#fourth").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#premier").scrollIntoView({ behavior: "smooth" });
+  });
   function addActiveClass() {
     let a = document.querySelector("a");
     // for (let i = 0; i < a.length; i++) {
@@ -133,27 +150,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const nrlLogo = document.getElementById("nrl");
   nrlLogo.addEventListener("mouseover", hovericon, true);
   nrlLogo.addEventListener("mouseout", hovericonOut, true);
-
-  $(".navbar a").on("click", function (e) {
-    console.log(this.hash);
-    if (this.hash !== "") {
-      e.preventDefault();
-      const hash = this.hash;
-
-      $("html,body").animate(
-        {
-          scrollTop: $(hash).offset().top,
-        },
-        800
-      );
-    }
-  });
-
-  //scroll to sections smoothly
-  // let home = document.getElementById("first");
-  // let team = document.getElementById("second");
-  // let slide = document.getElementById("third");
-  // let prem = document.getElementById("fourth");
 
   // let myButton = document.getElementById("goTop");
 
