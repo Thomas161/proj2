@@ -11,25 +11,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let t1 = gsap.timeline();
   let grid = document.querySelector(".navbar");
   let chart = document.getElementById("premiershipTable");
-  // console.log("Length of sections : ", sectionsAll.length);// length = 4
-  // console.log("Sections : ", sectionsAll); //section HTML collections
-
-  /**Check if section in viewport */
-
-  // function isInView(elem) {
-  //   var distance = elem.getBoundingClientRect();
-  //   // console.log(distance);
-  //   return (
-  //     distance.top >= 0 &&
-  //     distance.left >= 0 &&
-  //     distance.bottom <=
-  //       (window.innerHeight || document.documentElement.clientHeight) &&
-  //     distance.right <=
-  //       (window.innerWidth || document.documentElement.clientWidth)
-  //   );
-  // }
-
-  // window.addEventListener("scroll", isInView(sectionsAll));
+  console.log("Length of sections : ", sectionsAll.length); // length = 4
+  console.log("Sections : ", sectionsAll); //section HTML collections
 
   let playAnimation = function () {
     t1.fromTo(
@@ -51,19 +34,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     liElements.innerHTML = title;
     return liElements;
   }
+  [...sectionsAll].forEach((s, i) => {
+    console.log(s.id);
+    // for (var i = 0; i < s.length; i++) {
+    const sec = s;
+    const title = ["home", "teams", "slides", "premier"];
+    console.log("Section id:", sec);
+    console.log("Headers:", title);
+    console.log("?", i); //0,1,2,3 array indexes
+    // console.log("Section id:", s.dataset);
 
-  ulElements.appendChild(
-    createNavLinks(`<a href="#home"  id="first">HOME</a>`)
-  );
-  ulElements.appendChild(
-    createNavLinks(`<a href="#teams"  id="second" >TEAMS</a>`)
-  );
-  ulElements.appendChild(
-    createNavLinks(`<a href="#slides"  id="third" >SLIDES</a>`)
-  );
-  ulElements.appendChild(
-    createNavLinks(`<a href="#premier" id="fourth" >PREMIERSHIPS</a>`)
-  );
+    ulElements.appendChild(
+      createNavLinks(`<a href="#${title[i]}"  id="first">${title[i]}</a>`)
+    );
+  });
 
   /**Modal List */
   function createRules(list) {
@@ -93,23 +77,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
   ulElement.appendChild(createRules(scrum));
 
   /**JQuery scroll to section */
-  $("#first").on("click", function (e) {
-    e.preventDefault();
-    document.querySelector("#home").scrollIntoView({ behavior: "smooth" });
-  });
-  $("#second").on("click", function (e) {
-    e.preventDefault();
-    document.querySelector("#teams").scrollIntoView({ behavior: "smooth" });
-  });
-  $("#third").on("click", function (e) {
-    e.preventDefault();
-    document.querySelector("#slides").scrollIntoView({ behavior: "smooth" });
-  });
-  $("#fourth").on("click", function (e) {
-    e.preventDefault();
-    document.querySelector("#premier").scrollIntoView({ behavior: "smooth" });
-  });
+  [...sectionsAll].forEach((s, i) => {
+    console.log("s variables =>", s.id);
+    console.log("i variables =>", i);
+    $(`${s[i].id}`).on("click", function (e) {
+      e.preventDefault();
+      document
+        .querySelector(`${s[i].id}`)
+        .scrollIntoView({ behavior: "smooth" });
 
+      // $("#second").on("click", function (e) {
+      //   e.preventDefault();
+      //   document.querySelector("#teams").scrollIntoView({ behavior: "smooth" });
+      // });
+      // $("#third").on("click", function (e) {
+      //   e.preventDefault();
+      //   document.querySelector("#slides").scrollIntoView({ behavior: "smooth" });
+      // });
+      // $("#fourth").on("click", function (e) {
+      //   e.preventDefault();
+      //   document.querySelector("#premier").scrollIntoView({ behavior: "smooth" });
+      // });
+    });
+  });
   function addActiveClass() {
     for (let i = 0; i < sectionsAll.length; i++) {
       aTags[i].addEventListener("click", function () {
