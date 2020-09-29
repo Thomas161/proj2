@@ -42,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log("Section id:", sec);
     console.log("Headers:", title);
     console.log("?", i); //0,1,2,3 array indexes
-    // console.log("Section id:", s.dataset);
-
     ulElements.appendChild(
       createNavLinks(`<a href="#${title[i]}"  id="first">${title[i]}</a>`)
     );
@@ -77,34 +75,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
   ulElement.appendChild(createRules(scrum));
 
   /**JQuery scroll to section */
-  [...sectionsAll].forEach((s, i) => {
-    console.log("s variables =>", s.id);
-    console.log("i variables =>", i);
-    $(`${s[i].id}`).on("click", function (e) {
-      e.preventDefault();
-      document
-        .querySelector(`${s[i].id}`)
-        .scrollIntoView({ behavior: "smooth" });
 
-      // $("#second").on("click", function (e) {
-      //   e.preventDefault();
-      //   document.querySelector("#teams").scrollIntoView({ behavior: "smooth" });
-      // });
-      // $("#third").on("click", function (e) {
-      //   e.preventDefault();
-      //   document.querySelector("#slides").scrollIntoView({ behavior: "smooth" });
-      // });
-      // $("#fourth").on("click", function (e) {
-      //   e.preventDefault();
-      //   document.querySelector("#premier").scrollIntoView({ behavior: "smooth" });
-      // });
-    });
+  $("#first").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#home").scrollIntoView({ behavior: "smooth" });
   });
+  $("#second").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#teams").scrollIntoView({ behavior: "smooth" });
+  });
+  $("#third").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#slides").scrollIntoView({ behavior: "smooth" });
+  });
+  $("#fourth").on("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#premier").scrollIntoView({ behavior: "smooth" });
+  });
+
   function addActiveClass() {
     for (let i = 0; i < sectionsAll.length; i++) {
       aTags[i].addEventListener("click", function () {
         let current = document.getElementsByClassName("active");
-        // console.log(current);
+
         if (current.length > 0) {
           current[0].className = current[0].className.replace("active", "");
         } else {
